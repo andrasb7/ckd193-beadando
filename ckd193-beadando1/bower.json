@@ -1,0 +1,23 @@
+{
+  "name": "beadando1",
+  "authors": [
+    "pessaai <pekszi@caesar.elte.hu>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://github.com/pessaai/ckd193-beadando",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/lib/"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootswatch": "~3.3.5+4"
+  }
+}

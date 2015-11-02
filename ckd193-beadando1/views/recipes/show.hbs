@@ -1,0 +1,73 @@
+<div class="page-header">
+     <h1>{{recipe.name}}</h1>
+</div>
+
+{{#each messages}}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    {{this}}
+</div>
+{{/each}}
+
+
+<table class="table table-striped table-hover ">
+     <tbody>
+          <tr>
+               <th>Típus</th>
+               <td>{{recipe.type}}</td>
+          </tr>
+          <tr>
+               <th>Alap ital</th>
+               <td>{{recipe.base}}</td>
+          </tr>
+          <tr>
+               <th>Recept</th>
+               <td>{{recipe.recipe}}</td>
+          </tr>
+     </tbody>
+</table>
+
+
+    {{#if isnotEdit}}
+    <a href="/edit={{recipe.id}}" class="btn btn-primary btn-sm">Szerkesztés</a>
+    <a href="/recipes/list" class="btn btn-primary btn-sm">Vissza</a>
+    {{/if}}
+    {{#if isEdit}}
+        <a href="/{{recipe.id}}" class="btn btn-default">Vissza</a>
+    {{/if}}
+
+
+{{#each recipe.comments}}
+<li href="#" class="list-group-item">
+    <blockquote>
+    <h4 class="list-group-item-heading">{{username}} <small>{{date}}</small></h4>
+    <p class="list-group-item-text">{{text}}</p>
+    </blockquote>
+</li>
+{{/each}}
+
+<form class="form-horizontal" method="post">
+     <fieldset>
+          <div class="form-group
+            {{#if validationErrors.text}}
+                has-error
+            {{/if}}
+          ">
+               <label for="text" class="col-lg-2 control-label">Új komment</label>
+               <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" id="text" name="text">{{data.text}}</textarea>
+                    <span class="help-block">Írd le a véleményed.</span>
+                    {{#if validationErrors.text}}
+                         <span class="help-block">{{validationErrors.text.msg}}</span>
+                     {{/if}}
+                     <div class="help-block with-errors"></div>
+               </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+     </fieldset>
+</form>

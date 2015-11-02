@@ -1,0 +1,232 @@
+{
+  "data": {
+    "recipe": [
+      {
+        "name": "Sex on the Beach",
+        "type": "cocktail",
+        "base": "vodka",
+        "recipe": "4 cl vodka, 2 cl Peach Tree, narancslé, áfonyalé",
+        "numberOfMessages": 0,
+        "date": "2015-10-25T19:25:20.669Z",
+        "createdAt": "2015-10-25T19:25:20.672Z",
+        "updatedAt": "2015-11-02T19:15:45.218Z",
+        "id": 1
+      },
+      {
+        "name": "Cuba libre",
+        "type": "long drink",
+        "base": "rum",
+        "recipe": "4 cl Rum, cola, lime",
+        "numberOfMessages": 0,
+        "date": "2015-10-25T20:32:23.084Z",
+        "createdAt": "2015-10-25T20:32:23.087Z",
+        "updatedAt": "2015-10-25T20:32:23.087Z",
+        "id": 2
+      },
+      {
+        "name": "Tequila Sunrise",
+        "type": "cocktail",
+        "base": "tequila",
+        "recipe": "4 cl tequila, 2 cl grenadine, narancslé",
+        "numberOfMessages": 0,
+        "date": "2015-11-02T17:40:57.593Z",
+        "createdAt": "2015-11-02T17:40:57.596Z",
+        "updatedAt": "2015-11-02T19:16:47.015Z",
+        "id": 7
+      },
+      {
+        "name": "B52",
+        "type": "shot",
+        "base": "egyeb",
+        "recipe": "2cl baracklikőr, 2 cl baileys, grenadine",
+        "numberOfMessages": 0,
+        "date": "2015-11-02T19:21:22.136Z",
+        "createdAt": "2015-11-02T19:21:22.139Z",
+        "updatedAt": "2015-11-02T19:21:22.139Z",
+        "id": 8
+      },
+      {
+        "name": "Martini Dry",
+        "type": "aperitif",
+        "base": "gin",
+        "recipe": "4 cl gin, 2 cl száraz vermut, olajbogyó",
+        "numberOfMessages": 0,
+        "date": "2015-11-02T19:23:30.213Z",
+        "createdAt": "2015-11-02T19:23:30.214Z",
+        "updatedAt": "2015-11-02T19:23:30.214Z",
+        "id": 9
+      },
+      {
+        "name": "dfd",
+        "type": "long drink",
+        "base": "vodka",
+        "recipe": "dfsd",
+        "numberOfMessages": 0,
+        "date": "2015-11-02T19:23:37.464Z",
+        "createdAt": "2015-11-02T19:23:37.465Z",
+        "updatedAt": "2015-11-02T19:23:37.465Z",
+        "id": 10
+      }
+    ],
+    "comment": [
+      {
+        "text": "dfsdfds",
+        "username": "Guest",
+        "recipe": 1,
+        "date": "2015-11-02T19:29:10.294Z",
+        "createdAt": "2015-11-02T19:29:10.295Z",
+        "updatedAt": "2015-11-02T19:29:10.295Z",
+        "id": 5
+      }
+    ],
+    "user": [
+      {
+        "felhnev": "Ellasandra",
+        "surname": "Peknyó",
+        "forename": "Szilvia",
+        "password": "$2a$10$La.72MfibN1EG7P2.prPM.Y3Nr/vk9nqAsVkJpuJB32fnpb3tZYbO",
+        "avatar": "",
+        "role": "riporter",
+        "createdAt": "2015-10-28T19:27:43.723Z",
+        "updatedAt": "2015-10-28T19:27:43.723Z",
+        "id": 2
+      }
+    ]
+  },
+  "schema": {
+    "recipe": {
+      "date": {
+        "type": "datetime"
+      },
+      "name": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "shot",
+          "long drink",
+          "cocktail",
+          "aperitif"
+        ]
+      },
+      "base": {
+        "type": "string",
+        "enum": [
+          "vodka",
+          "rum",
+          "whisky",
+          "gin",
+          "tequila",
+          "egyeb"
+        ]
+      },
+      "recipe": {
+        "type": "string"
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "comment": {
+      "date": {
+        "type": "datetime"
+      },
+      "text": {
+        "type": "string"
+      },
+      "username": {
+        "type": "string",
+        "defaultsTo": "anonymous (test)"
+      },
+      "recipe": {
+        "type": "integer",
+        "model": "recipe",
+        "foreignKey": true,
+        "alias": "recipe"
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "felhnev": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "surname": {
+        "type": "string"
+      },
+      "forename": {
+        "type": "string"
+      },
+      "avatar": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string",
+        "enum": [
+          "riporter",
+          "operator"
+        ],
+        "defaultsTo": "riporter"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "recipe": {
+      "id": 11
+    },
+    "comment": {
+      "id": 5
+    },
+    "user": {
+      "id": 2
+    }
+  }
+}
