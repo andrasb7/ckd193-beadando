@@ -30,12 +30,15 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
 *	Bejelentkezés
 *	Regisztráció
 
-**Bejelentkezett felhasználó**: 
+**Bejelentkezett felhasználó**: A publikus oldalak elérésén felül
 
 *	Új recept felvétele
+*	Meglévő recept megtekintése
 *	Meglévő recept szerkesztése
 *	Meglévő recept törlése
 *	Komment írása
+
+![](docs/images/teljes-esetdiagram.png)
 
 Vegyünk példának egy egyszerű folyamatot:
 
@@ -48,6 +51,7 @@ Vegyünk példának egy egyszerű folyamatot:
 5.	Szerkesztés oldalon felviszi az új adatokat
 6.	Submit gombra kattintva elmenti a változásokat, és megtekinti a listaoldalt
 
+![](docs/images/foly-leiro-esetdiagram.png)
 
 
 ###2.	Tervezés
@@ -86,8 +90,71 @@ Vegyünk példának egy egyszerű folyamatot:
 
 #####2.3. Felhasználói-felület modell
 Oldalvázlatok:
-![Kép felirata](docs/images/index.jpg)
+**Főoldal**
+![](docs/images/kepernyokep/index.jpg)
+**Regisztrációs oldal**
+![](docs/images/kepernyokep/regisztracio.jpg)
+**Bejelentkező oldal**
+![](docs/images/kepernyokep/bejelentkezes.jpg)
+**Koktél listaoldal**
+![](docs/images/kepernyokep/list.jpg)
+**Új koktél felvétele**
+![](docs/images/kepernyokep/new.jpg)
+**Koktél megtekintése**
+![](docs/images/kepernyokep/id.jpg)
+**Koktél szerkesztése**
+![](docs/images/kepernyokep/edit.jpg)
  
 ###3.	Implementáció
 ###4.	Tesztelés
+#####4.1. Tesztelési környezetek
+Egységteszteket végzünk a mocha keretrendszer és a chai ellenőrző könyvtár segítségével.
+#####4.2. Egységteszt
+
+Regisztráció tesztelése: user létrehozása
+```
+    it('should be able to create a user', function () {
+        return User.create(getUserData())
+        .then(function (user) {
+            expect(user.felhnev).to.equal('abcdef');
+            expect(bcrypt.compareSync('jelszo', user.password)).to.be.true;
+            expect(user.surname).to.equal('Gipsz');
+            expect(user.forename).to.equal('Jakab');
+            expect(user.avatar).to.equal('');
+        });
+    });
+```
+
+Regisztrált felhasználó megtalálása
+```
+    it('should be able to find a user', function() {
+        return User.create(getUserData())
+        .then(function(user) {
+            return User.findOneByFelhnev(user.felhnev);
+        })
+        .then(function (user) {
+            expect(user.felhnev).to.equal('abcdef');
+            expect(bcrypt.compareSync('jelszo', user.password)).to.be.true;
+            expect(user.surname).to.equal('Gipsz');
+            expect(user.forename).to.equal('Jakab');
+            expect(user.avatar).to.equal('');
+        });
+    });
+```
+
+Jelszó ellenőrzése, helyes és hibás jelszó esetén
+```
+    describe('#validPassword', function() {
+        it('should return true with right password', function() {
+             return User.create(getUserData()).then(function(user) {
+                 expect(user.validPassword('jelszo')).to.be.true;
+             })
+        });
+        it('should return false with wrong password', function() {
+             return User.create(getUserData()).then(function(user) {
+                 expect(user.validPassword('titkos')).to.be.false;
+             })
+        });
+    });
+```
 ###5.	Felhasználói dokumentáció
