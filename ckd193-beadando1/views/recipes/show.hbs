@@ -29,11 +29,11 @@
 
 
     {{#if isnotEdit}}
-    <a href="/edit={{recipe.id}}" class="btn btn-primary btn-sm">Szerkesztés</a>
+    <a href="/recipes/edit={{recipe.id}}" class="btn btn-primary btn-sm">Szerkesztés</a>
     <a href="/recipes/list" class="btn btn-primary btn-sm">Vissza</a>
     {{/if}}
     {{#if isEdit}}
-        <a href="/{{recipe.id}}" class="btn btn-default">Vissza</a>
+        <a href="/recipes/{{recipe.id}}" class="btn btn-default">Vissza</a>
     {{/if}}
 
 
@@ -65,7 +65,6 @@
           </div>
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Cancel</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

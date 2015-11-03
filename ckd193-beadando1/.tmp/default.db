@@ -9,7 +9,7 @@
         "numberOfMessages": 0,
         "date": "2015-10-25T19:25:20.669Z",
         "createdAt": "2015-10-25T19:25:20.672Z",
-        "updatedAt": "2015-11-02T19:15:45.218Z",
+        "updatedAt": "2015-11-03T14:23:27.539Z",
         "id": 1
       },
       {
@@ -55,30 +55,9 @@
         "createdAt": "2015-11-02T19:23:30.214Z",
         "updatedAt": "2015-11-02T19:23:30.214Z",
         "id": 9
-      },
-      {
-        "name": "dfd",
-        "type": "long drink",
-        "base": "vodka",
-        "recipe": "dfsd",
-        "numberOfMessages": 0,
-        "date": "2015-11-02T19:23:37.464Z",
-        "createdAt": "2015-11-02T19:23:37.465Z",
-        "updatedAt": "2015-11-02T19:23:37.465Z",
-        "id": 10
       }
     ],
-    "comment": [
-      {
-        "text": "dfsdfds",
-        "username": "Guest",
-        "recipe": 1,
-        "date": "2015-11-02T19:29:10.294Z",
-        "createdAt": "2015-11-02T19:29:10.295Z",
-        "updatedAt": "2015-11-02T19:29:10.295Z",
-        "id": 5
-      }
-    ],
+    "comment": [],
     "user": [
       {
         "felhnev": "Ellasandra",
@@ -220,10 +199,10 @@
   },
   "counters": {
     "recipe": {
-      "id": 11
+      "id": 16
     },
     "comment": {
-      "id": 5
+      "id": 17
     },
     "user": {
       "id": 2
