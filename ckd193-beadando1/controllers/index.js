@@ -26,9 +26,4 @@ router.get('/logout', function(req, res){
     res.redirect('/');
 });
 
-router.get('/operator', ensureAuthenticated, andRestrictTo('operator'), function(req, res) {
-    res.end('operator');
-});
-
-
 module.exports = router;

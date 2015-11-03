@@ -104,6 +104,63 @@ router.post('/new', function (req, res) {
     }
 });
 
+router.get('/:id', function(req, res) {
+    
+    var validationErrors = (req.flash('validationErrors') || [{}]).pop();
+    var data = (req.flash('data') || [{}]).pop();
+    
+    var id = req.params.id;
+    
+    req.app.models.recipe.findOne({ id: id}).populate('comments').then(function (recipe) {
+        console.log(recipe);
+        res.render('recipes/show', {
+            isEdit: false,
+            isnotEdit: true,
+            recipe: recipe,
+            
+            messages: req.flash('info'),
+            
+            validationErrors: validationErrors,
+            data: data,
+        }); 
+    });
+});
+
+router.post('/:id', function(req, res){
+    
+    req.checkBody('text', 'Hibás comment').notEmpty().withMessage('Írj valamit!');
+    
+    var validationErrors = req.validationErrors(true);
+    console.log(validationErrors);
+    
+    var id = req.params.id;
+    
+    if (validationErrors) {
+        // űrlap megjelenítése a hibákkal és a felküldött adatokkal
+        req.flash('validationErrors', validationErrors);
+        req.flash('data', req.body);
+        res.redirect('/recipes/' + id); 
+    }
+    else {
+        // adatok elmentése (ld. később) és a hibalista megjelenítése
+        req.app.models.comment.create({
+            text: req.body.text,
+            username: 'Guest',
+            recipe: id,
+        })
+        .then(function (recipe) {
+            //siker
+            req.flash('info', 'Megjegyzés sikeresen felvéve!');
+            res.redirect('/recipes/' + id);
+        })
+        .catch(function (err) {
+            //hiba
+            console.log(err);
+        });
+
+    }
+});
+
 router.get('/delete=:id', function (req, res) {
     
     var id = req.params.id;
@@ -199,61 +256,5 @@ router.post('/edit=:id', function (req, res) {
     }
 });
 
-router.get('/:id', function(req, res) {
-    
-    var validationErrors = (req.flash('validationErrors') || [{}]).pop();
-    var data = (req.flash('data') || [{}]).pop();
-    
-    var id = req.params.id;
-    
-    req.app.models.recipe.findOne({ id: id}).populate('comments').then(function (recipe) {
-        console.log(recipe);
-        res.render('recipes/show', {
-            isEdit: false,
-            isnotEdit: true,
-            recipe: recipe,
-            
-            messages: req.flash('info'),
-            
-            validationErrors: validationErrors,
-            data: data,
-        }); 
-    });
-});
-
-router.post('/:id', function(req, res){
-    
-    req.checkBody('text', 'Hibás comment').notEmpty().withMessage('Írj valamit!');
-    
-    var validationErrors = req.validationErrors(true);
-    console.log(validationErrors);
-    
-    var id = req.params.id;
-    
-    if (validationErrors) {
-        // űrlap megjelenítése a hibákkal és a felküldött adatokkal
-        req.flash('validationErrors', validationErrors);
-        req.flash('data', req.body);
-        res.redirect('/recipes/' + id); 
-    }
-    else {
-        // adatok elmentése (ld. később) és a hibalista megjelenítése
-        req.app.models.comment.create({
-            text: req.body.text,
-            username: 'Guest',
-            recipe: id,
-        })
-        .then(function (recipe) {
-            //siker
-            req.flash('info', 'Megjegyzés sikeresen felvéve!');
-            res.redirect('/recipes/' + id);
-        })
-        .catch(function (err) {
-            //hiba
-            console.log(err);
-        });
-
-    }
-});
 
 module.exports = router;
