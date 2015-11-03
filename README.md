@@ -6,7 +6,8 @@ Készítette: Peknyó Szilvia
 ###1.	Követelmények feltárása
 #####1.1.	Célkitűzés, projektindító dokumentum
 A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott koktélok, és italok főbb tulajdonságait, és receptjüket. 
-######Funkcionális követelmények :
+
+######Funkcionális követelmények:
 * Regisztrációra
 * Bejelentkezés
 * Csak bejelentkezett felhasználók által elérhető funkciók
@@ -14,7 +15,7 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
   - a meglévő italok szerkesztésére
   - a meglévő italok törlésére
 
-######Nem funkcionális követelmények :
+######Nem funkcionális követelmények:
 *	Könnyű áttekinthetőség: Színekkel típus szerint csoportosítás
 *	Felhasználóbarát
 *	Megbízhatóság: jelszóval védett funkciók
@@ -52,12 +53,12 @@ Vegyünk példának egy egyszerű folyamatot:
 ###2.	Tervezés
 
 #####2.1.	A program architektúrája
-#Publikus:#
+**Publikus:**
 * Főoldal
 * Bejelentkezés
 * Regisztráció
 
-#Bejelentkezett:#
+**Bejelentkezett:**
 * Főoldal
 * Új koktél felvétele
 * Listaoldal
@@ -85,6 +86,7 @@ Vegyünk példának egy egyszerű folyamatot:
 
 #####2.3. Felhasználói-felület modell
 Oldalvázlatok:
+![Kép felirata](docs/images/index.jpg)
  
 ###3.	Implementáció
 ###4.	Tesztelés
