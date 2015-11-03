@@ -50,6 +50,42 @@ Vegyünk példának egy egyszerű folyamatot:
 
 
 ###2.	Tervezés
+
+#####2.1.	A program architektúrája
+#Publikus:#
+* Főoldal
+* Bejelentkezés
+* Regisztráció
+
+#Bejelentkezett:#
+* Főoldal
+* Új koktél felvétele
+* Listaoldal
+  * Koktél törlése 
+  * Koktél megtekintése
+    * Koktél szerkesztése 
+    * Komment hozzáfűzése
+
+#####2.2. Végpontok
+
+* GET/: főoldal
+* GET/login: bejelentkező oldal
+* POST/login: bejelentkező adatok felküldése
+* GET/login/signup: regisztrációs oldal
+* POST/login/signup: regisztrációs adatok felküldése
+* GET/logout: kijelentkező oldal
+* GET/recipes/list: koktéllista oldal
+* GET/recipes/new: új koktél felvétele
+* POST/recipes/new: új koktél felvételéhez szükséges adatok felküldése
+* GET/recipes/id: koktél adatok
+* POST/recipes/id: új megjegyzés felvitele
+* GET/recipes/delete=id: koktél recept törlése
+* GET/recipes/edit=id: koktél módosítása
+* POST/recipes/edit=id: koktél módosítása, adatok felküldése
+
+#####2.3. Felhasználói-felület modell
+Oldalvázlatok:
+ 
 ###3.	Implementáció
 ###4.	Tesztelés
 ###5.	Felhasználói dokumentáció
