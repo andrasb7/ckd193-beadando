@@ -108,30 +108,19 @@ Oldalvázlatok:
 ###3.	Implementáció
 ###4.	Tesztelés
 #####4.1. Tesztelési környezetek
-Egységteszteket végzünk a mocha keretrendszer és a chai ellenőrző könyvtár segítségével.
+Kétféle tesztelési módszert használunk a program teljeskörű tesztelésére. Először egységteszteket végzünk a mocha keretrendszer és a chai ellenőrző könyvtár segítségével. Egységtesztelés közben a modellek működését, a problémamentes funkciókat és műveleteket ellenőrizzük. 
+Másodszor a funkciónális teszetelés segítségével a végpontokat ellenőrizzük, a megfelelő tartalom megjelenését, és az oldalak működőképességét ellenőrizzük.
 #####4.2. Egységteszt
+
+Kiválasztjuk a tesztelni kívánt modelt (ezesetben a user modelt), és létrehozunk hozzá egy tesztelő fájlt.
+Legyen ez most a: **_user.test.js_**
+
+Hozzuk létre az abstract modellréteget (ORM), majd vegyük sorra a teszteseteket.
 
 Regisztráció tesztelése: user létrehozása
 ```
     it('should be able to create a user', function () {
         return User.create(getUserData())
-        .then(function (user) {
-            expect(user.felhnev).to.equal('abcdef');
-            expect(bcrypt.compareSync('jelszo', user.password)).to.be.true;
-            expect(user.surname).to.equal('Gipsz');
-            expect(user.forename).to.equal('Jakab');
-            expect(user.avatar).to.equal('');
-        });
-    });
-```
-
-Regisztrált felhasználó megtalálása
-```
-    it('should be able to find a user', function() {
-        return User.create(getUserData())
-        .then(function(user) {
-            return User.findOneByFelhnev(user.felhnev);
-        })
         .then(function (user) {
             expect(user.felhnev).to.equal('abcdef');
             expect(bcrypt.compareSync('jelszo', user.password)).to.be.true;
@@ -157,4 +146,83 @@ Jelszó ellenőrzése, helyes és hibás jelszó esetén
         });
     });
 ```
+
+#####4.3. Funkciónális teszetelés
+
+Válasszuk ki a tesztelni kívánt modelt (ezesetben recipes), és hozzuk létre hozzá a tesztelő fájlt. Nevezzük el: **_recipes.test.js_**
+
+Teszteljük sorban az egyes végpontok működését. Vegyünk most példának egy végpontot, és egy funkció működését:
+
+Új recept oldal elérése:
+```
+    it('should go the recipe page', function () {
+        return browser.visit('/recipes/new')
+        .then(function () {
+            browser.assert.success();
+            browser.assert.text('div.page-header > h1', 'Új recept felvétele');
+        });
+    });
+```
+Sikeres bejelentkezés a megfelelő adatokkal:
+```
+    it('should be able to login with correct credentials', function (done) {
+        browser
+            .fill('felhnev', 'Ellasandra')
+            .fill('password', 'titkos')
+            .pressButton('button[type=submit]')
+            .then(function () {
+                browser.assert.redirected();
+                browser.assert.success();
+                browser.assert.url({ pathname: '/recipes/list' });
+                done();
+            });
+    });
+```
+
+A tesztfájl lefuttatásához használt parancs: _npm test_
+
+Sikeres tesztek lefutása után az alábbi üzenetet kell kapjuk:
+```
+pessaai:~/workspace/ckd193-beadando1 (master) $ npm test
+
+> @ test /home/ubuntu/workspace/ckd193-beadando1
+> node_modules/mocha/bin/mocha **/*.test.js
+
+
+
+  User visits index page
+    ✓ should be successful
+    ✓ should see welcome page
+
+  User visits new recipe page
+    ✓ should go to the authentication page
+    ✓ should be able to login with correct credentials (1706ms)
+    ✓ should go the recipe page (154ms)
+
+  UserModel
+    ✓ should work
+    ✓ should be able to create a user (536ms)
+    ✓ should be able to find a user (514ms)
+    ✓ should be able to update a user (524ms)
+    #validPassword
+      ✓ should return true with right password (493ms)
+      ✓ should return false with wrong password (486ms)
+
+
+  11 passing (5s)
+```
+
+#####4.4.Tesztesetek
+* User
+  * Felhasználó létrehozása
+  * Felhasználó keresése
+  * Felhasználó módosítása
+  * Bejelentkezés jó, és rossz jelszóval
+* Recipe
+  * Főoldal láthatósága
+  * Új recept felvétele oldal láthatósága
+  * Csak bejelentkezett felhasználó által látható oldal láthatósága
+  * Sikeres bejelentkezés
+
+  
 ###5.	Felhasználói dokumentáció
