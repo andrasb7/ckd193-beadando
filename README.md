@@ -117,6 +117,49 @@ Vegyünk példának egy egyszerű folyamatot:
 ######2.1.2.Végső megvalósítás kinézete:
  
 ###3.	Implementáció
+
+######3.1.1. Fejlesztőkörnyezet
+
+Webes IDE: **Cloud9**
+
+* Github account szükséges
+* Belépés után új workspace létrehozása (node.js)
+* Ezután elkezdhetjük a kód írását
+* _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összest fájlt kiválaszthatjuk
+* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségeket megtekinthetjük.
+* _git push origin master_ paranccsal végezetül a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
+* Végezetül a Github oldalán leellenőrizhetjük a munkánkat.
+
+######3.1.2. Könyvtárstruktúra, funkciók
+
+* **ckd193-beadando1**
+  * **config**
+    * _waterline.js_
+  * **controllers**
+    * _index.js_
+    * _recipes.js_
+    * _login.js_
+  * **models**
+    * _comment.js_
+    * _recipes.js_
+    * _recipes.test.js_
+    * _user.js_
+    * _user.test.js_
+  * **views**: handlebars (hbs) fájlok
+    * **login**
+      * _index.hbs_
+      * _signup.hbs_
+    * **recipes**
+      * _edit.hbs_
+      * _list.hbs_
+      * _new.hbs_
+      * _show.hbs_
+    * _index.hbs_
+    * _layout.hbs_
+  * _bower.json_
+  * _package.json_
+  * _server.js_
+
 ###4.	Tesztelés
 #####4.1. Tesztelési környezetek
 Kétféle tesztelési módszert használunk a program teljeskörű tesztelésére. Először egységteszteket végzünk a mocha keretrendszer és a chai ellenőrző könyvtár segítségével. Egységtesztelés közben a modellek működését, a problémamentes funkciókat és műveleteket ellenőrizzük. 
