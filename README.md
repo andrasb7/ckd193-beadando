@@ -69,7 +69,7 @@ Vegyünk példának egy egyszerű folyamatot:
 
 ######2.1.1. Komponensdiagram
 
-![](docs/images/kepernyokep/komponensdiagram1.png)
+![](docs/images/komponensdiagram1.png)
 
 ######2.1.2. Oldaltérkép:
 
@@ -175,9 +175,9 @@ Webes IDE: **Cloud9**
 * Github account szükséges
 * Belépés után új workspace létrehozása (node.js)
 * Ezután elkezdhetjük a kód írását
-* _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összest fájlt kiválaszthatjuk
-* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségeket megtekinthetjük.
-* _git push origin master_ paranccsal végezetül a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
+* _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összes fájlt kiválaszthatjuk
+* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségüket megtekinthetjük.
+* _git push origin master_ paranccsal a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
 * Végezetül a Github oldalán leellenőrizhetjük a munkánkat.
 
 ######3.1.2. Könyvtárstruktúra, funkciók
@@ -213,7 +213,7 @@ Webes IDE: **Cloud9**
 ###4.	Tesztelés
 #####4.1. Tesztelési környezetek
 Kétféle tesztelési módszert használunk a program teljeskörű tesztelésére. Először egységteszteket végzünk a mocha keretrendszer és a chai ellenőrző könyvtár segítségével. Egységtesztelés közben a modellek működését, a problémamentes funkciókat és műveleteket ellenőrizzük. 
-Másodszor a funkciónális teszetelés segítségével a végpontokat ellenőrizzük, a megfelelő tartalom megjelenését, és az oldalak működőképességét ellenőrizzük.
+Másodszor a funkciónális teszetelés segítségével a végpontokat ellenőrizzük, a megfelelő tartalom megjelenését, és az oldalak működőképességét.
 #####4.2. Egységteszt
 
 Kiválasztjuk a tesztelni kívánt modelt (ezesetben a user modelt), és létrehozunk hozzá egy tesztelő fájlt.
