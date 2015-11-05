@@ -101,20 +101,62 @@ Vegyünk példának egy egyszerű folyamatot:
 ######2.1.1.Oldalvázlatok:
 **Főoldal**
 ![](docs/images/kepernyokep/index.jpg)
+
 **Regisztrációs oldal**
 ![](docs/images/kepernyokep/regisztracio.jpg)
+
 **Bejelentkező oldal**
 ![](docs/images/kepernyokep/bejelentkezes.jpg)
+
 **Koktél listaoldal**
 ![](docs/images/kepernyokep/list.jpg)
+
 **Új koktél felvétele**
 ![](docs/images/kepernyokep/new.jpg)
+
 **Koktél megtekintése**
 ![](docs/images/kepernyokep/id.jpg)
+
 **Koktél szerkesztése**
 ![](docs/images/kepernyokep/edit.jpg)
 
 ######2.1.2.Végső megvalósítás kinézete:
+
+**Főoldal**
+![](docs/images/design/index-design.jpg)
+
+**Regisztrációs oldal**
+![](docs/images/design/regisztracio-design.jpg)
+
+**Bejelentkező oldal**
+![](docs/images/design/bejelentkezes-design.jpg)
+
+**Koktél listaoldal**
+![](docs/images/design/list-design.jpg)
+
+**Új koktél felvétele**
+![](docs/images/design/new-design.jpg)
+
+**Koktél megtekintése**
+![](docs/images/design/id-design.jpg)
+ 
+######2.1.3. Osztálymodell
+ 
+ **Adatmodell**
+ 
+ ![](docs/images/kepernyokep/adatmodell.png)
+ 
+ **Adatbázisterv**
+ 
+ ![](docs/images/db-modell.png)
+ 
+######2.1.4.  Dinamikus működés
+
+ **Szekvenciadiagram**
+ 
+ Vegyünk példának a regisztrációt, majd egy új elem felvételét, szerkesztését, törlését, szekvenciadiagrammon.
+ 
+ ![](docs/images/szekvencia.png)
  
 ###3.	Implementáció
 
@@ -280,3 +322,12 @@ pessaai:~/workspace/ckd193-beadando1 (master) $ npm test
 
   
 ###5.	Felhasználói dokumentáció
+
+**Futtatáshoz szükséges operációs rendszer:** Tetszőleges operációs rendszer
+
+**A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
+
+**Egyéb követelmények:** Internet böngésző telepítése, JavaScript ajánlott
+
+**Telepítés lépései**
+
