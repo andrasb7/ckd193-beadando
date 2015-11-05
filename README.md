@@ -153,6 +153,7 @@ Vegyünk példának egy egyszerű folyamatot:
 ######2.1.4.  Dinamikus működés
 
  **Szekvenciadiagram**
+ 
  Vegyünk példának a regisztrációt, majd egy új elem felvételét, szerkesztését, törlését, szekvenciadiagrammon.
  
  ![](docs/images/szekvencia.png)
@@ -321,3 +322,12 @@ pessaai:~/workspace/ckd193-beadando1 (master) $ npm test
 
   
 ###5.	Felhasználói dokumentáció
+
+**Futtatáshoz szükséges operációs rendszer:** Tetszőleges operációs rendszer
+
+**A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
+
+**Egyéb követelmények:** Internet böngésző telepítése, JavaScript ajánlott
+
+**Telepítés lépései**
+
