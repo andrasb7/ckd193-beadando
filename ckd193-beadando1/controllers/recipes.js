@@ -161,7 +161,7 @@ router.post('/:id', function(req, res){
     }
 });
 
-router.get('/delete=:id', function (req, res) {
+router.get('/delete/:id', function (req, res) {
     
     var id = req.params.id;
     
@@ -184,7 +184,9 @@ router.get('/delete=:id', function (req, res) {
     });
 });
 
-router.get('/edit=:id', function (req, res) {
+
+
+router.get('/edit/:id', function (req, res) {
     var id = req.params.id;
     
     req.app.models.recipe.findOne({ id: id}).populate('comments').then(function (recipe) {
@@ -212,10 +214,10 @@ router.get('/edit=:id', function (req, res) {
             data: recipe,
         }); 
     });
-
 });
 
-router.post('/edit=:id', function (req, res) {
+
+router.post('/edit/:id', function (req, res) {
     var id = req.params.id;
         // adatok ellenőrzése
     req.checkBody('name', 'Hibás név').notEmpty().withMessage('A nevet kötelező megadni!');

@@ -57,7 +57,26 @@
         "id": 9
       }
     ],
-    "comment": [],
+    "comment": [
+      {
+        "text": "elso komment",
+        "username": "Guest",
+        "recipe": 1,
+        "date": "2015-11-05T14:48:18.158Z",
+        "createdAt": "2015-11-05T14:48:18.160Z",
+        "updatedAt": "2015-11-05T14:48:18.160Z",
+        "id": 18
+      },
+      {
+        "text": "masodik komment",
+        "username": "Guest",
+        "recipe": 2,
+        "date": "2015-11-05T14:53:34.643Z",
+        "createdAt": "2015-11-05T14:53:34.644Z",
+        "updatedAt": "2015-11-05T14:53:34.644Z",
+        "id": 19
+      }
+    ],
     "user": [
       {
         "felhnev": "Ellasandra",
@@ -199,10 +218,10 @@
   },
   "counters": {
     "recipe": {
-      "id": 16
+      "id": 23
     },
     "comment": {
-      "id": 17
+      "id": 23
     },
     "user": {
       "id": 2

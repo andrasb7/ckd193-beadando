@@ -44,13 +44,5 @@ describe('User visits new recipe page', function (argument) {
                 done();
             });
     });
-    
-    it('should go the recipe page', function () {
-        return browser.visit('/recipes/new')
-        .then(function () {
-            browser.assert.success();
-            browser.assert.text('div.page-header > h1', 'Új recept felvétele');
-        });
-    });
 
 });
