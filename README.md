@@ -1,11 +1,10 @@
-# ckd193-beadando
 # Dokumentáció
 ##Koktél receptek
 Készítette: Peknyó Szilvia
 
-###1.	Követelmények feltárása
+###1.	Követelményanalízis
 #####1.1.	Célkitűzés, projektindító dokumentum
-A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott koktélok, és italok főbb tulajdonságait, és receptjüket. 
+A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott koktélok, és italok főbb tulajdonságait, és receptjüket. Az adatok védelme érdekében legyen lehetőség regisztrációra, majd bejelentkezésre. Bejelentkezett felhasználó a koktélok listáját megtekintheti, bővítheti, meglévő elemeket törölhet, valamit megjegyzéseket írhat. 
 
 ######Funkcionális követelmények:
 * Regisztrációra
@@ -14,6 +13,7 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
   - új ital felvételére a listába
   - a meglévő italok szerkesztésére
   - a meglévő italok törlésére
+  - komment írása
 
 ######Nem funkcionális követelmények:
 *	Könnyű áttekinthetőség: Színekkel típus szerint csoportosítás
@@ -21,6 +21,14 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
 *	Megbízhatóság: jelszóval védett funkciók
 
 #####1.2.	Szakterületi fogalomjegyzék
+
+**Fajták:**
+* **Shot:** Felespohárban felszolgált, gyakran csak alkoholt tartalmazó ital.
+* **Cocktail:** Koktélos pohárban, szirupokkal, gyömülcslevekkel készített ital.
+* **Long drink:** Egyszerű long-os pohárban felszolgált ital, gyakran egy fajta alkoholt és üdítőt tartalmaz.
+* **Aperitif:** Étkezések előtt, étvágy fokozás céljából fogyasztott ital.
+
+**Alap ital:** A koktélban legnagyobb arányban részt vevő tömény alkohol.
 
 #####1.3.	Használatieset-modell, funkcionális követelmények
 
@@ -49,14 +57,14 @@ Vegyünk példának egy egyszerű folyamatot:
 3.	Megnyomja a „Megtekintés” feliratú gombot
 4.	A megtekintés oldalon kiválaszthatja a „Szerkesztés” gombot
 5.	Szerkesztés oldalon felviszi az új adatokat
-6.	Submit gombra kattintva elmenti a változásokat, és megtekinti a listaoldalt
+6.	Submit gombra kattintva elmenti a változásokat
 
 ![](docs/images/foly-leiro-esetdiagram.png)
 
 
 ###2.	Tervezés
 
-#####2.1.	A program architektúrája
+#####2.1.	Architektúra terv
 **Publikus:**
 * Főoldal
 * Bejelentkezés
@@ -71,7 +79,7 @@ Vegyünk példának egy egyszerű folyamatot:
     * Koktél szerkesztése 
     * Komment hozzáfűzése
 
-#####2.2. Végpontok
+**Végpontok**
 
 * GET/: főoldal
 * GET/login: bejelentkező oldal
@@ -88,8 +96,9 @@ Vegyünk példának egy egyszerű folyamatot:
 * GET/recipes/edit=id: koktél módosítása
 * POST/recipes/edit=id: koktél módosítása, adatok felküldése
 
-#####2.3. Felhasználói-felület modell
-Oldalvázlatok:
+#####2.1. Felhasználói-felület modell
+
+######2.1.1.Oldalvázlatok:
 **Főoldal**
 ![](docs/images/kepernyokep/index.jpg)
 **Regisztrációs oldal**
@@ -104,6 +113,8 @@ Oldalvázlatok:
 ![](docs/images/kepernyokep/id.jpg)
 **Koktél szerkesztése**
 ![](docs/images/kepernyokep/edit.jpg)
+
+######2.1.2.Végső megvalósítás kinézete:
  
 ###3.	Implementáció
 ###4.	Tesztelés
