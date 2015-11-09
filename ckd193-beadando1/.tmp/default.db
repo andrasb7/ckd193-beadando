@@ -2,79 +2,99 @@
   "data": {
     "recipe": [
       {
-        "name": "Sex on the Beach",
-        "type": "cocktail",
-        "base": "vodka",
-        "recipe": "4 cl vodka, 2 cl Peach Tree, narancslé, áfonyalé",
+        "name": "aaaaaa",
+        "type": "shot",
+        "base": "whisky",
+        "recipe": "dssssssssssssssssss",
+        "user": 3,
         "numberOfMessages": 0,
-        "date": "2015-10-25T19:25:20.669Z",
-        "createdAt": "2015-10-25T19:25:20.672Z",
-        "updatedAt": "2015-11-03T14:23:27.539Z",
-        "id": 1
+        "date": "2015-11-09T13:36:39.038Z",
+        "createdAt": "2015-11-09T13:36:39.040Z",
+        "updatedAt": "2015-11-09T13:36:39.040Z",
+        "id": 31
       },
       {
-        "name": "Cuba libre",
-        "type": "long drink",
+        "name": "Pina colada",
+        "type": "cocktail",
         "base": "rum",
-        "recipe": "4 cl Rum, cola, lime",
+        "recipe": "4 cl rum, kókusz, tejszín, ananász",
+        "user": 2,
         "numberOfMessages": 0,
-        "date": "2015-10-25T20:32:23.084Z",
-        "createdAt": "2015-10-25T20:32:23.087Z",
-        "updatedAt": "2015-10-25T20:32:23.087Z",
-        "id": 2
+        "date": "2015-11-09T13:37:08.245Z",
+        "createdAt": "2015-11-09T13:37:08.246Z",
+        "updatedAt": "2015-11-09T13:39:58.301Z",
+        "id": 32
       },
       {
-        "name": "Tequila Sunrise",
-        "type": "cocktail",
-        "base": "tequila",
-        "recipe": "4 cl tequila, 2 cl grenadine, narancslé",
+        "name": "Dry martini",
+        "type": "aperitif",
+        "base": "gin",
+        "recipe": "4 cl gin, 2 cl száraz vermut, olajbogyó",
+        "user": 2,
         "numberOfMessages": 0,
-        "date": "2015-11-02T17:40:57.593Z",
-        "createdAt": "2015-11-02T17:40:57.596Z",
-        "updatedAt": "2015-11-02T19:16:47.015Z",
-        "id": 7
+        "date": "2015-11-09T13:37:36.823Z",
+        "createdAt": "2015-11-09T13:37:36.824Z",
+        "updatedAt": "2015-11-09T13:37:36.824Z",
+        "id": 33
       },
       {
         "name": "B52",
         "type": "shot",
         "base": "egyeb",
-        "recipe": "2cl baracklikőr, 2 cl baileys, grenadine",
+        "recipe": "2cl baracklikőr, 2cl baileys, grenadine",
+        "user": 2,
         "numberOfMessages": 0,
-        "date": "2015-11-02T19:21:22.136Z",
-        "createdAt": "2015-11-02T19:21:22.139Z",
-        "updatedAt": "2015-11-02T19:21:22.139Z",
-        "id": 8
-      },
-      {
-        "name": "Martini Dry",
-        "type": "aperitif",
-        "base": "gin",
-        "recipe": "4 cl gin, 2 cl száraz vermut, olajbogyó",
-        "numberOfMessages": 0,
-        "date": "2015-11-02T19:23:30.213Z",
-        "createdAt": "2015-11-02T19:23:30.214Z",
-        "updatedAt": "2015-11-02T19:23:30.214Z",
-        "id": 9
+        "date": "2015-11-09T13:38:05.285Z",
+        "createdAt": "2015-11-09T13:38:05.287Z",
+        "updatedAt": "2015-11-09T13:38:05.287Z",
+        "id": 34
       }
     ],
     "comment": [
       {
         "text": "elso komment",
         "username": "Guest",
-        "recipe": 1,
-        "date": "2015-11-05T14:48:18.158Z",
-        "createdAt": "2015-11-05T14:48:18.160Z",
-        "updatedAt": "2015-11-05T14:48:18.160Z",
-        "id": 18
+        "recipe": 32,
+        "date": "2015-11-09T13:38:13.989Z",
+        "createdAt": "2015-11-09T13:38:13.991Z",
+        "updatedAt": "2015-11-09T13:38:13.991Z",
+        "id": 25
       },
       {
-        "text": "masodik komment",
+        "text": "masodik",
         "username": "Guest",
-        "recipe": 2,
-        "date": "2015-11-05T14:53:34.643Z",
-        "createdAt": "2015-11-05T14:53:34.644Z",
-        "updatedAt": "2015-11-05T14:53:34.644Z",
-        "id": 19
+        "recipe": 33,
+        "date": "2015-11-09T13:38:20.372Z",
+        "createdAt": "2015-11-09T13:38:20.373Z",
+        "updatedAt": "2015-11-09T13:38:20.373Z",
+        "id": 26
+      },
+      {
+        "text": "harmadik",
+        "username": "Guest",
+        "recipe": 33,
+        "date": "2015-11-09T13:38:25.298Z",
+        "createdAt": "2015-11-09T13:38:25.299Z",
+        "updatedAt": "2015-11-09T13:38:25.299Z",
+        "id": 27
+      },
+      {
+        "text": "komment",
+        "username": "Ellasandra",
+        "recipe": 34,
+        "date": "2015-11-09T13:39:32.645Z",
+        "createdAt": "2015-11-09T13:39:32.648Z",
+        "updatedAt": "2015-11-09T13:39:32.648Z",
+        "id": 28
+      },
+      {
+        "text": "haha",
+        "username": "Ellasandra",
+        "recipe": 32,
+        "date": "2015-11-09T13:39:43.260Z",
+        "createdAt": "2015-11-09T13:39:43.261Z",
+        "updatedAt": "2015-11-09T13:39:43.261Z",
+        "id": 29
       }
     ],
     "user": [
@@ -88,6 +108,17 @@
         "createdAt": "2015-10-28T19:27:43.723Z",
         "updatedAt": "2015-10-28T19:27:43.723Z",
         "id": 2
+      },
+      {
+        "felhnev": "aaaa",
+        "surname": "aaaaa",
+        "forename": "aaaa",
+        "password": "$2a$10$vZrUufVtAJ0U3agcLel3P.jR34rFDW0veQipBI/DJ8Hyelzlyi3yu",
+        "avatar": "",
+        "role": "riporter",
+        "createdAt": "2015-11-09T13:36:04.508Z",
+        "updatedAt": "2015-11-09T13:36:04.508Z",
+        "id": 3
       }
     ]
   },
@@ -218,13 +249,13 @@
   },
   "counters": {
     "recipe": {
-      "id": 23
+      "id": 34
     },
     "comment": {
-      "id": 23
+      "id": 29
     },
     "user": {
-      "id": 2
+      "id": 3
     }
   }
 }

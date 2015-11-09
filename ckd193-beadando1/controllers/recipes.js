@@ -27,7 +27,7 @@ function decorateRecipes(recipesContainer) {
 }
 
 router.get('/list', function (req, res) {
-    req.app.models.recipe.find().then(function (recipes) {
+    req.app.models.recipe.find({user: req.user.id}).then(function (recipes) {
         console.log(recipes);
         res.render('recipes/list', {
             recipes: decorateRecipes(recipes),
@@ -89,11 +89,12 @@ router.post('/new', function (req, res) {
             type: req.body.type,
             base: req.body.base,
             recipe: req.body.recipe,
+            user: req.user,
             numberOfMessages: 0,
         })
         .then(function (recipe) {
             //siker
-            req.flash('info', 'Hiba sikeresen felvéve!');
+            req.flash('info', 'Recept sikeresen felvéve!');
             res.redirect('/recipes/list');
         })
         .catch(function (err) {
@@ -145,7 +146,7 @@ router.post('/:id', function(req, res){
         // adatok elmentése (ld. később) és a hibalista megjelenítése
         req.app.models.comment.create({
             text: req.body.text,
-            username: 'Guest',
+            username: req.user.felhnev,
             recipe: id,
         })
         .then(function (recipe) {
