@@ -16,9 +16,10 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
   - komment írása
 
 ######Nem funkcionális követelmények:
-*	Könnyű áttekinthetőség: Színekkel típus szerint csoportosítás
-*	Felhasználóbarát
-*	Megbízhatóság: jelszóval védett funkciók
+*	**Könnyű áttekinthetőség:** Színekkel típus szerint csoportosítás
+*	**Használhatóság:** Könnyű áttekinthetőség, ésszerű elrendezés, könnyen kezelhetőség
+*	**Megbízhatóság:** jelszóval védett funkciók, és a jelszavak védelme a háttérben. Hibásan bevitt adatok esetén a program jól láthatóan jelezzen a felhasználónak, és emelje ki a hibás beviteli mezőket. A jól bevitt adatok maradjanak az űrlapban.
+*	**Karbantarthatóság:** könnyen lehessen bővíteni, a különböző típusú fájlok külön csoportosítva, ésszerűen legyenek felbontva, a könnyebb fejleszthetőség miatt
 
 #####1.2.	Szakterületi fogalomjegyzék
 
@@ -38,7 +39,7 @@ A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az
 *	Bejelentkezés
 *	Regisztráció
 
-**Bejelentkezett felhasználó**: A publikus oldalak elérésén felül
+**Bejelentkezett felhasználó**: A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
 
 *	Új recept felvétele
 *	Meglévő recept megtekintése
@@ -65,6 +66,13 @@ Vegyünk példának egy egyszerű folyamatot:
 ###2.	Tervezés
 
 #####2.1.	Architektúra terv
+
+######2.1.1. Komponensdiagram
+
+![](docs/images/komponensdiagram1.png)
+
+######2.1.2. Oldaltérkép:
+
 **Publikus:**
 * Főoldal
 * Bejelentkezés
@@ -79,7 +87,7 @@ Vegyünk példának egy egyszerű folyamatot:
     * Koktél szerkesztése 
     * Komment hozzáfűzése
 
-**Végpontok**
+######2.1.3. Végpontok
 
 * GET/: főoldal
 * GET/login: bejelentkező oldal
@@ -96,9 +104,9 @@ Vegyünk példának egy egyszerű folyamatot:
 * GET/recipes/edit=id: koktél módosítása
 * POST/recipes/edit=id: koktél módosítása, adatok felküldése
 
-#####2.1. Felhasználói-felület modell
+#####2.2. Felhasználói-felület modell
 
-######2.1.1.Oldalvázlatok:
+######2.2.1.Oldalvázlatok:
 **Főoldal**
 ![](docs/images/kepernyokep/index.jpg)
 
@@ -120,7 +128,7 @@ Vegyünk példának egy egyszerű folyamatot:
 **Koktél szerkesztése**
 ![](docs/images/kepernyokep/edit.jpg)
 
-######2.1.2.Végső megvalósítás kinézete:
+######2.2.2.Designtervek (végső megvalósítás kinézete):
 
 **Főoldal**
 ![](docs/images/design/index-design.jpg)
@@ -140,7 +148,7 @@ Vegyünk példának egy egyszerű folyamatot:
 **Koktél megtekintése**
 ![](docs/images/design/id-design.jpg)
  
-######2.1.3. Osztálymodell
+######2.2.3. Osztálymodell
  
  **Adatmodell**
  
@@ -150,11 +158,11 @@ Vegyünk példának egy egyszerű folyamatot:
  
  ![](docs/images/db-modell.png)
  
-######2.1.4.  Dinamikus működés
+######2.2.4.  Dinamikus működés
 
  **Szekvenciadiagram**
  
- Vegyünk példának a regisztrációt, majd egy új elem felvételét, szerkesztését, törlését, szekvenciadiagrammon.
+ Vegyünk példának a regisztrációt, majd egy új elem felvételét, szerkesztését, törlését, mindezt szekvenciadiagrammon.
  
  ![](docs/images/szekvencia.png)
  
@@ -167,9 +175,9 @@ Webes IDE: **Cloud9**
 * Github account szükséges
 * Belépés után új workspace létrehozása (node.js)
 * Ezután elkezdhetjük a kód írását
-* _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összest fájlt kiválaszthatjuk
-* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségeket megtekinthetjük.
-* _git push origin master_ paranccsal végezetül a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
+* _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összes fájlt kiválaszthatjuk
+* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségüket megtekinthetjük.
+* _git push origin master_ paranccsal a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
 * Végezetül a Github oldalán leellenőrizhetjük a munkánkat.
 
 ######3.1.2. Könyvtárstruktúra, funkciók
@@ -205,7 +213,7 @@ Webes IDE: **Cloud9**
 ###4.	Tesztelés
 #####4.1. Tesztelési környezetek
 Kétféle tesztelési módszert használunk a program teljeskörű tesztelésére. Először egységteszteket végzünk a mocha keretrendszer és a chai ellenőrző könyvtár segítségével. Egységtesztelés közben a modellek működését, a problémamentes funkciókat és műveleteket ellenőrizzük. 
-Másodszor a funkciónális teszetelés segítségével a végpontokat ellenőrizzük, a megfelelő tartalom megjelenését, és az oldalak működőképességét ellenőrizzük.
+Másodszor a funkciónális teszetelés segítségével a végpontokat ellenőrizzük, a megfelelő tartalom megjelenését, és az oldalak működőképességét.
 #####4.2. Egységteszt
 
 Kiválasztjuk a tesztelni kívánt modelt (ezesetben a user modelt), és létrehozunk hozzá egy tesztelő fájlt.
@@ -329,5 +337,26 @@ pessaai:~/workspace/ckd193-beadando1 (master) $ npm test
 
 **Egyéb követelmények:** Internet böngésző telepítése, JavaScript ajánlott
 
-**Telepítés lépései**
+**Program használata:**
+
+1. Böngészőben nyissuk meg a főoldalt
+2. Jobb felső sarokban kattintsunk a Bejelentkezés feliratra
+3. Bejelentkezés/Regisztráció után a Lista oldalra jutunk
+4. Bal alsó sarokban az Új recept felvitele gombra kattintva tudunk új recepteket felvenni a listába
+5. Töltsük ki az űrlapot
+6. Hibás adatok esetén az űrlap jelezni fogja a hibát
+7. Submit gombra kattintva mentsük el az adatokat
+8. Lista oldalon: Törlés gombra kattintva törölhetjük a receptet
+9. Lista oldalon: Megtekint gombra kattintva a megtekintés oldalra jutunk
+10. Megtekintés oldalon található a szerkesztés gomb, és a komment írása funkció
+11. Szerkesztés oldal: megegyezik az új recept felvitel funkcióval, csak előre láthatóak benne a recept eddigi adatai
+
+###6.	Irodalomjegyzék:
+
+http://webprogramozas.inf.elte.hu/alkfejl.php
+
+http://ade.web.elte.hu/wabp/lecke2_lap1.html
+
+http://webprogramozas.inf.elte.hu/alkfejl/A_dokumentacio_felepitese.pdf
+
 
