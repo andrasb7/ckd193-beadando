@@ -4,7 +4,7 @@ Készítette: Peknyó Szilvia
 
 ###1.	Követelményanalízis
 #####1.1.	Célkitűzés, projektindító dokumentum
-A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott koktélok, és italok főbb tulajdonságait, és receptjüket. Az adatok védelme érdekében legyen lehetőség regisztrációra, majd bejelentkezésre. Bejelentkezett felhasználó a koktélok listáját megtekintheti, bővítheti, meglévő elemeket törölhet, valamit megjegyzéseket írhat. 
+A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott koktélok, és italok főbb tulajdonságait, és receptjüket egy webes vastagkliens, azaz egyoldali alkalmazás felhasználásával Az adatok védelme érdekében legyen lehetőség regisztrációra, majd bejelentkezésre. Bejelentkezett felhasználó a koktélok listáját megtekintheti, bővítheti, meglévő elemeket törölhet, valamit megjegyzéseket írhat. 
 
 ######Funkcionális követelmények:
 * Regisztrációra
